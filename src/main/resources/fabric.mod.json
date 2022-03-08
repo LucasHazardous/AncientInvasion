@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "ancientinvasion",
+  "version": "${version}",
+  "name": "AncientInvasion",
+  "description": "",
+  "authors": [
+    "LucasHazardous"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/AncientInvasion/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "lucas.hazardous.ancientinvasion.AncientInvasion"
+    ]
+  },
+  "mixins": [
+    "AncientInvasion.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "fabric": "*",
+    "minecraft": "1.18.2"
+  }
+}
