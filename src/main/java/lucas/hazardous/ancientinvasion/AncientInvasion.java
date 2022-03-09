@@ -15,7 +15,9 @@ import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.entity.mob.ZombieEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
@@ -31,6 +33,8 @@ public class AncientInvasion implements ModInitializer {
 
     public static final EntityModelLayer ANCIENT_ZOMBIE_MODEL_LAYER = new EntityModelLayer(new Identifier(MOD_ID, "ancient_zombie"), "main");
 
+    public static final Item ANCIENT_ZOMBIE_SPAWN_EGG = new SpawnEggItem(ANCIENT_ZOMBIE_ENTITY, 10000000, 11998228, new Item.Settings().group(ANCIENT_GROUP));
+
     @Override
     public void onInitialize() {
 
@@ -43,5 +47,7 @@ public class AncientInvasion implements ModInitializer {
         EntityRendererRegistry.register(ANCIENT_ZOMBIE_ENTITY, (context) -> new AncientZombieRenderer(context));
 
         Registry.register(Registry.ENTITY_TYPE, new Identifier(MOD_ID, "ancient_zombie"), ANCIENT_ZOMBIE_ENTITY);
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ancient_zombie_spawn_egg"), ANCIENT_ZOMBIE_SPAWN_EGG);
     }
 }
